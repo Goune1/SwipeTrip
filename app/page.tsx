@@ -1,30 +1,46 @@
 "use client"
 
-import { useEffect, useRef } from 'react';
+import { useState, useEffect, useRef } from 'react';
 //@ts-ignore
 import AOS from 'aos';
+//@ts-ignore
+import Cookies from 'js-cookie'
 import 'aos/dist/aos.css';
 
 import Nav from '@/components/navbar'
 import Globe from '@/components/globe'
+import PremiumSection from '@/components/premiumSection'
 import Footer from '@/components/footer'
 import { CardStackDemo } from '@/components/card-stack'
 import Flip from '@/components/ui/flip'
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion"
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 import { SquareArrowOutUpRight, MoveRight } from 'lucide-react';
 
 export default function Home() {
   const videoSectionRef = useRef(null);
+  const [isLoggedIn, setIsLoggedIn] = useState<boolean>(false);
+  const [isPaid, setIsPaid] = useState<boolean>(false);
+  const [username, setUsername] = useState()
 
   useEffect(() => {
     AOS.init({
       duration: 1000,
     });
+
+    const usernameCookie = Cookies.get('username');
+    if (usernameCookie) {
+      setIsLoggedIn(true);
+      setUsername(usernameCookie)
+    } else {
+      setIsLoggedIn(false);
+    }
+
+    const paymentCookie = Cookies.get('payment');
+    if (paymentCookie === 'true') {
+      setIsPaid(true);
+    } else {
+      setIsPaid(false);
+    }
   }, []);
 
   const handleScrollToVideo = () => {
@@ -47,7 +63,11 @@ export default function Home() {
 
       <div className="flex flex-col items-center mt-36">
         <div className='flex flex-col items-center justify-center gap-y-8'>
-          <h1 className="text-center text-black text-4xl lg:text-6xl font-bold tracking-tight max-w-[888px]">Le moyen <span className="text-fuchsia-700">innovant</span> pour trouver votre future destination</h1>
+          {isLoggedIn ? (
+            <h1 className="text-center text-black text-4xl lg:text-6xl font-bold tracking-tight max-w-[888px]">Bonjour <span className='text-fuchsia-700'>{username}</span> ! Prêt pour votre prochain voyage ?</h1>
+          ) : (
+            <h1 className="text-center text-black text-4xl lg:text-6xl font-bold tracking-tight max-w-[888px]">Le moyen <span className="text-fuchsia-700">innovant</span> pour trouver votre future destination</h1>
+          )}
           <div className='flex gap-x-4'>
             <a className='flex items-center justify-center gap-x-2 p-2 bg-fuchsia-700 hover:bg-fuchsia-600 rounded-full w-36 h-10 text-white' href="https://apps.apple.com/fr/app/apple-store/id375380948">Télécharger  <SquareArrowOutUpRight className='w-4 h-4'/></a>
             <button onClick={handleScrollToVideo} className='flex items-center justify-center gap-x-1 text-black'>Découvrir <MoveRight className='w-4' /></button>
@@ -92,7 +112,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className='-mt-80 md:mt-72 pb-72'>
+      <div className='-mt-80 md:mt-72'>
         <h1 className='text-black text-center text-4xl lg:text-5xl font-bold'>Vous avez des questions ?</h1>
         <div className='flex justify-center mt-12 md:mt-36 p-8 md:p-0'>
           <Accordion type="single" collapsible className='w-[500px]'>
@@ -125,6 +145,14 @@ export default function Home() {
             </AccordionItem>
           </Accordion>
         </div>
+      </div>
+
+      <div className='mt-36 pb-72'>
+        {isPaid ? (
+          null
+        ) : (
+          <PremiumSection/>
+        )}
       </div>
 
       <Footer />

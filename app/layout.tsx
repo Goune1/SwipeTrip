@@ -14,7 +14,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="fr">
-      <meta name="google-site-verification" content="xODl_9bIhINMkODL1iS12Z815uFLY7ftcLLLU68GN6Q" />
       <link rel="icon" type="image/svg+xml" href="logo.png" />
       <body className={GeistSans.className}>{children}</body>
     </html>

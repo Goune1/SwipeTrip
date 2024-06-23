@@ -1,5 +1,8 @@
 "use client"
 
+import { useState, useEffect } from 'react'
+//@ts-ignore
+import Cookies from 'js-cookie'
 import Nav from '@/components/navbar'
 import { CheckIcon } from '@heroicons/react/20/solid'
 
@@ -12,6 +15,16 @@ const includedFeatures = [
 
 
 export default function Premium() {
+    const [isLoggedIn, setIsLoggedIn] = useState<boolean>(false);
+
+    useEffect(() => {
+        const usernameCookie = Cookies.get('username');
+        if (usernameCookie) {
+          setIsLoggedIn(true);
+        } else {
+          setIsLoggedIn(false);
+        }
+    }, []);
 
     const handleBuy = () => {
         fetch('/api/create-checkout-session', {
@@ -63,12 +76,22 @@ export default function Premium() {
                                     <span className="text-5xl font-bold tracking-tight text-gray-900">50€</span>
                                     <span className="text-sm font-semibold leading-6 tracking-wide text-gray-600">EUR</span>
                                 </p>
-                                <a
+                                {isLoggedIn ? (
+                                    <a
                                     onClick={handleBuy}
-                                    className="mt-10 block w-full rounded-md bg-fuchsia-700 px-3 py-2 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-                                >
-                                    Obtenir le Premium
-                                </a>
+                                    className="mt-10 block w-full rounded-md bg-fuchsia-700 px-3 py-2 text-center text-sm font-semibold text-white shadow-sm hover:bg-fuchsia-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 cursor-pointer"
+                                    >
+                                        Obtenir le Premium
+                                    </a>
+                                ) : (
+                                    <a
+                                    href='login'
+                                    className="mt-10 block w-full rounded-md bg-fuchsia-700 px-3 py-2 text-center text-sm font-semibold text-white shadow-sm hover:bg-fuchsia-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 cursor-pointer"
+                                    >
+                                        Obtenir le Premium
+                                    </a>
+                                )}
+                                
                             </div>
                         </div>
                     </div>

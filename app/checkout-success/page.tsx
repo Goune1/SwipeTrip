@@ -34,7 +34,7 @@ export default function CheckoutSuccess() {
 
     return (
         <div className='min-h-screen bg-fuchsia-200'>
-            <h1 className='text-fuchsia-200'>C'est une magnifique page !</h1>
+            <h1 className='text-fuchsia-200'>C&apos;est une magnifique page !</h1>
         </div>
     )
 }

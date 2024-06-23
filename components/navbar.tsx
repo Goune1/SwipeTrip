@@ -18,6 +18,7 @@ export default function Nav() {
         // Supprimer le cookie de l'utilisateur
         Cookies.remove('username');
         Cookies.remove('email')
+        Cookies.remove('payment')
     };
     
 

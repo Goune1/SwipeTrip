@@ -7,7 +7,7 @@ export default function Thanks() {
             <Nav/>
 
             <div className='flex flex-col justify-center items-center mt-36'>
-                <h1 className=' text-4xl md:text-5xl font-bold flex'>Merci pour votre achat <Check className='w-16 h-16 ml-2 -mt-1 text-green-600'/></h1>
+                <h1 className='text-4xl md:text-5xl text-center font-bold flex p-4'>Merci pour votre achat !</h1>
                 <div className='flex'>
                     <a
                       href="/"

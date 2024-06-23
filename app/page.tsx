@@ -99,7 +99,7 @@ export default function Home() {
           <div className='lg:w-[700px] h-16 p-2 md:p-0'>
             <h1 className='text-4xl lg:text-5xl font-bold text-center'>Venez découvrir<Flip words={WordsArray} className='tracking-tight text-fuchsia-700' /> </h1>
           </div>
-          <div data-aos='fade-left' className='pt-8 md:pt-0 flex justify-center md:justify-start'>
+          <div className='pt-8 md:pt-0 flex justify-center md:justify-start'>
             <CardStackDemo />
           </div>
         </div>

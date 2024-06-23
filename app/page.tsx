@@ -82,7 +82,7 @@ export default function Home() {
           <p className='text-lg text-center max-w-xl mt-6'>Vous ne savez pas où partir au cours de vos prochaines vacances ? <br /> Avec <span className='text-fuchsia-700'>SwipTrim</span> vous n&apos;aurez qu&apos;à nous indiquer des destination que vous appréciez et l&apos;algorithme vous recommendera des destinations qui vous conviendront à coup sur</p>
         </div>
 
-        <div data-aos='fade-left' className='flex justify-center md:justify-start'>
+        <div className='flex justify-center md:justify-start'>
           <video
             src="/scrolling.mov"
             autoPlay
@@ -107,7 +107,7 @@ export default function Home() {
 
       <div className='mt-64'>
         <h1 className='text-black text-center text-4xl lg:text-5xl font-bold'>Mais également des <span className='text-fuchsia-700'>centaines</span> d&apos;autres <br /> destinations à travers le monde</h1>
-        <div data-aos="fade-right" className='cursor-pointer'>
+        <div className='cursor-pointer'>
           <Globe />
         </div>
       </div>

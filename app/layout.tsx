@@ -3,8 +3,8 @@ import { GeistSans } from "geist/font/sans";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "SwipTrip",
-  description: "SwipTrip est une nouvelle application de voyage innovante, elle possède un système unique permettant de définir le voyage que vous préférerez",
+  title: "SwipeTrip",
+  description: "SwipeTrip est une nouvelle application de voyage innovante, elle possède un système unique permettant de définir le voyage que vous préférerez",
 };
 
 export default function RootLayout({

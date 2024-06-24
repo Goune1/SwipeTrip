@@ -5,7 +5,7 @@ import mongoose from 'mongoose';
 
 import Stripe from 'stripe';
 
-const stripe = new Stripe('sk_test_51P1WhQLezuV5pxcSzz9bdP1knlpCoSqoBOfYQOmz9VijOSc0K5TQT6GoWpYebRnv7BMIAFn8zKWSuCzyObDIuajz00HFULQV0I')
+const stripe = new Stripe(process.env.STRIPE_KEY)
 
 export async function POST(request: Request): Promise<NextResponse> {
     const session = await stripe.checkout.sessions.create({

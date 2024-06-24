@@ -31,7 +31,7 @@ export async function POST(request: Request): Promise<NextResponse> {
     const isMatch = await bcrypt.compare(data.password, user.password);
 
     if(!isMatch) {
-        return NextResponse.json({error: 'Mot de passe incorrect'}, {status: 400})
+        return NextResponse.json({error: 'Mot de passe incorrect'}, {status: 400});
     }
 
     let dataSent = {

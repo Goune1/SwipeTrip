@@ -2,10 +2,7 @@
 
 import { useState, useEffect, useRef } from 'react';
 //@ts-ignore
-import AOS from 'aos';
-//@ts-ignore
 import Cookies from 'js-cookie'
-import 'aos/dist/aos.css';
 
 import Nav from '@/components/navbar'
 import Globe from '@/components/globe'
@@ -23,10 +20,6 @@ export default function Home() {
   const [username, setUsername] = useState()
 
   useEffect(() => {
-    AOS.init({
-      duration: 1000,
-    });
-
     const usernameCookie = Cookies.get('username');
     if (usernameCookie) {
       setIsLoggedIn(true);

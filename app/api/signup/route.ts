@@ -8,7 +8,7 @@ export async function POST(request: Request): Promise<NextResponse> {
 
     const loginCollection = require("@/schemas/login");
 
-    const DB_URL = process.env.DB_URL;
+    const DB_URL = process.env.MONGO_URL
     
     async function connectToDatabase() {
         try {

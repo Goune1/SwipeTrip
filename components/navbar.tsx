@@ -36,7 +36,7 @@ export default function Nav() {
         <div>
         {isLoggedIn ? (
             <div className="flex justify-between pt-4">
-                <a href="/" className="ml-12 text-2xl text-black hover:text-fuchsia-700 font-semibold">SwipTrip</a>
+                <a href="/" className="ml-12 text-2xl text-black hover:text-fuchsia-700 font-semibold">SwipeTrip</a>
                 <DropdownMenu >
                     <DropdownMenuTrigger asChild>
                         <h1 className='flex text-black text-lg mr-8 font-medium cursor-pointer'>{username} <ChevronDown className='mt-1'/></h1>
@@ -59,7 +59,7 @@ export default function Nav() {
             </div>
         ) : (
             <div className="flex justify-between pt-4">
-                <a href="/" className="ml-12 text-2xl text-black hover:text-fuchsia-700 font-semibold">SwipTrip</a>
+                <a href="/" className="ml-12 text-2xl text-black hover:text-fuchsia-700 font-semibold">SwipeTrip</a>
                 <a href="/login" className="mr-12 text-black flex gap-x-1 font-medium mt-1">Se connecter  <MoveRight className='w-4' /></a>
             </div>
         )}

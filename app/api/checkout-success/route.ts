@@ -7,8 +7,8 @@ export async function POST(request: Request): Promise<NextResponse> {
 
         const loginCollection = require("@/schemas/login");
 
-        const DB_URL = "mongodb://goune:goune1407@ac-nef3pac-shard-00-02.0x9jwgi.mongodb.net:27017,ac-nef3pac-shard-00-01.0x9jwgi.mongodb.net:27017,ac-nef3pac-shard-00-00.0x9jwgi.mongodb.net:27017/SwipTrip?authSource=admin&replicaSet=atlas-tibrt3-shard-0&ssl=true";
-
+        const DB_URL = process.env.DB_URL;
+        
         await mongoose.connect(DB_URL);
         console.log("Connecté à la base de données MongoDB");
 

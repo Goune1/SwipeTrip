@@ -21,8 +21,8 @@ export async function POST(request: Request): Promise<NextResponse> {
             },
             quantity: 1 
         }],
-        success_url: `https://swip-trip.vercel.app/checkout-success`,
-        cancel_url: `https://swip-trip.vercel.app/premium`
+        success_url: `https://swipe-trip.vercel.app/checkout-success`,
+        cancel_url: `https://swipe-trip.vercel.app/premium`
     })
 
     return NextResponse.json({url: session.url});

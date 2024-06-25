@@ -110,30 +110,32 @@ export default function Home() {
         <div className='flex justify-center mt-12 md:mt-36 p-8 md:p-0'>
           <Accordion type="single" collapsible className='w-[500px]'>
             <AccordionItem value="item-1">
-              <AccordionTrigger>Is it accessible?</AccordionTrigger>
+              <AccordionTrigger>
+                Est-ce que les voyages sont entièrements remboursables ?
+              </AccordionTrigger>
               <AccordionContent>
-                Yes. It adheres to the WAI-ARIA design pattern.
+                Oui, une assurance est incluse dans chaque voyage réservé sur SwipeTrips
               </AccordionContent>
             </AccordionItem>
 
             <AccordionItem value="item-2">
-              <AccordionTrigger>Is it accessible?</AccordionTrigger>
+              <AccordionTrigger>A combien de Swipe ai-je le droit par jour ?</AccordionTrigger>
               <AccordionContent>
-                Yes. It adheres to the WAI-ARIA design pattern.
+                20 et 50 pour les utilisateurs premium
               </AccordionContent>
             </AccordionItem>
 
             <AccordionItem value="item-3">
-              <AccordionTrigger>Is it accessible?</AccordionTrigger>
+              <AccordionTrigger>Quel type de voyage pourrais-je retrouver sur le site ?</AccordionTrigger>
               <AccordionContent>
-                Yes. It adheres to the WAI-ARIA design pattern.
+                Vous pourrez retrouver des voyages festifs, sportifs, aventure & découverte
               </AccordionContent>
             </AccordionItem>
 
             <AccordionItem value="item-4">
-              <AccordionTrigger>Is it accessible?</AccordionTrigger>
+              <AccordionTrigger>Combien y a-t-il de destinations au total ?</AccordionTrigger>
               <AccordionContent>
-                Yes. It adheres to the WAI-ARIA design pattern.
+                Sur SwipeTrip vous pourrez retrouver un total de 487 destinations différentes !
               </AccordionContent>
             </AccordionItem>
           </Accordion>

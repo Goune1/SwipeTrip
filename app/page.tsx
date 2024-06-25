@@ -10,6 +10,7 @@ import PremiumSection from '@/components/premiumSection'
 import Footer from '@/components/footer'
 import { CardStackDemo } from '@/components/card-stack'
 import Flip from '@/components/ui/flip'
+import NumberTicker from '@/components/ui/number-ticker';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 import { SquareArrowOutUpRight, MoveRight } from 'lucide-react';
 
@@ -99,7 +100,7 @@ export default function Home() {
       </div>
 
       <div className='mt-64'>
-        <h1 className='text-black text-center text-4xl lg:text-5xl font-bold'>Mais également des <span className='text-fuchsia-700'>centaines</span> d&apos;autres <br /> destinations à travers le monde</h1>
+        <h1 className='text-black text-center text-4xl lg:text-5xl font-bold'>Mais également <NumberTicker value={483} className='text-fuchsia-700'/> autres <br /> destinations à travers le monde</h1>
         <div className='cursor-pointer'>
           <Globe />
         </div>
